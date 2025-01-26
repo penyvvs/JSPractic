@@ -92,8 +92,59 @@ function writeYourGenres() {
 }
 writeYourGenres();
 
-
 // console.log(personalMovieDB);
 
 
+//add Task
+let SCoub, VCoub;
+function calculateVolumeAndArea(gran) {
+    if ( typeof(gran) !== 'number' || gran <= 0 || isNaN(gran)) {
+        return "Вы ввели неправильные данные";
+    }
+    
+    SCoub = (gran * gran) * 6;
+    VCoub = gran * gran * gran;
 
+    return `Объем куба: ${VCoub}, площадь всей поверхности: ${SCoub}`;
+}
+calculateVolumeAndArea('3');
+
+function getCoupeNumber(number) {
+    if (typeof(number) !== 'number' || number < 0 || !Number.isInteger(number)){
+        return "Ошибка. Проверьте правильность введенного номера места";
+    }
+    if (number === 0 || number > 36){
+        return `Таких мест в вагоне не существует`;
+    }
+
+    return Math.ceil(number/4);
+}
+getCoupeNumber(30);
+
+
+let time;
+function getTimeFromMinutes(time) {
+    if (typeof(time) !== 'number' || time < 0 || !Number.isInteger(time) || time > 600){
+        console.log("Ошибка, проверьте данные");
+    }
+    const hours = Math.floor(time / 60);
+    const minuts = time % 60;
+    let hoursStr = '';
+    if ( time == 0 || time <= 5){
+        hoursStr = "часов";
+    } else if ( time == 1 ){
+        hoursStr = "час";
+    } else {
+        hoursStr = "часа";
+    }
+    console.log(`Это ${hours} ${hoursStr} и ${minuts} минут`);
+}
+getTimeFromMinutes(125);
+
+function findMaxNumber(a, b, c, d) {
+    if (typeof(a) !== 'number' || typeof(b) !== 'number' || typeof(c) !== 'number' || typeof(d) !== 'number'){
+        return 0;
+    }
+    return Math.max(a, b, c, d);
+}
+findMaxNumber(1,4,'6',233);
