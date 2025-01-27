@@ -142,9 +142,19 @@ function getTimeFromMinutes(time) {
 getTimeFromMinutes(125);
 
 function findMaxNumber(a, b, c, d) {
-    if (typeof(a) !== 'number' || typeof(b) !== 'number' || typeof(c) !== 'number' || typeof(d) !== 'number'){
+    if (typeof(a) !== 'number' ||
+    typeof(b) !== 'number' ||
+    typeof(c) !== 'number' ||
+    typeof(d) !== 'number'){
         return 0;
     }
-    return Math.max(a, b, c, d);
+    console.log(Math.max(a, b, c, d));
 }
-findMaxNumber(1,4,'6',233);
+// findMaxNumber(1,4,666,233);
+
+
+function jsCallBack(lang, callback){
+    console.log(`I Lean ${lang}`);
+    callback(1,4,666,233);
+}
+jsCallBack("Javascript", findMaxNumber);
